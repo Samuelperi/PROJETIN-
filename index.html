@@ -815,7 +815,7 @@
         }
 
         // Criar partículas continuamente
-        setInterval(createParticle, 300);
+        setInterval(createParticle, 600);
 
         // Função principal da surpresa
         function showSurprise() {
@@ -855,12 +855,12 @@
             const teAmoTexts = [
                 'TE AMO VIDAAA ❤️',
                 '💖 TE AMO MAIS QUE TUDOOOOO 💖',
-                'EU TE AMO!',
+                'EU TE AMOOOOO!',
                 '❤️ MUSAAAAAAA ❤️',
                 'MARAVILHOSAAAA!',
                 '💕 VOCÊ É MEU TUDOOOOO 💕',
                 'EXUBERANTEEEE',
-                '🥰 TE AMO DEMAIS 🥰'
+                '🥰 TE AMOOOOO DEMAISSSSS 🥰'
             ];
             
             // Animação central principal
@@ -1155,33 +1155,6 @@
             longHover: false,
             allPhotosHovered: false
         };
-
-        // Detectar hover longo
-        let hoverTimer;
-        document.querySelector('.love-card').addEventListener('mouseenter', () => {
-            hoverTimer = setTimeout(() => {
-                if (!achievements.longHover) {
-                    achievements.longHover = true;
-                    showAchievement('🏆 Romântico Contemplador!', 'Você admirou a carta por 3 segundos');
-                }
-            }, 3000);
-        });
-
-        document.querySelector('.love-card').addEventListener('mouseleave', () => {
-            clearTimeout(hoverTimer);
-        });
-
-        // Detectar todas as fotos visitadas
-        let hoveredPhotos = new Set();
-        document.querySelectorAll('.photo-frame').forEach((frame, index) => {
-            frame.addEventListener('mouseenter', () => {
-                hoveredPhotos.add(index);
-                if (hoveredPhotos.size === 6 && !achievements.allPhotosHovered) {
-                    achievements.allPhotosHovered = true;
-                    showAchievement('📸 Guardião de Memórias!', 'Você visitou todas as nossas lembranças especiais');
-                }
-            });
-        });
 
         function showAchievement(title, description) {
             const achievement = document.createElement('div');
