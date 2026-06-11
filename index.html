@@ -977,17 +977,9 @@
         let clickTimer;
         
         document.addEventListener('click', (e) => {
-            clickCount++;
-            clearTimeout(clickTimer);
+      
             
-            if (clickCount === 3) {
-                // Ativação do modo ultra dark
-                document.body.style.filter = 'hue-rotate(30deg) saturate(1.8) brightness(1.2)';
-                createHeartExplosion();
-                
-                // Criar texto flutuante
-                const text = document.createElement('div');
-                text.innerHTML = '🔥 MODO DARK ULTRA ATIVADO! 🔥';
+            
                 text.style.cssText = `
                     position: fixed;
                     top: 50%;
